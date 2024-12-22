@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+}
+.logo {
+  text-align: center;
+}
+
+.logo img {
+  height: 180px;
+}
+
+#first-sec {
+  width: 80vw;
+  margin: auto;
+  font-family: "Lato", serif;
+  /* display: none; */
+}
+.head {
+  font-size: 40px;
+  font-family: "Poppins", serif;
+  font-weight: 700;
+}
+
+.rules {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+.rulesList {
+  padding: 12px;
+  font-size: 1.2rem;
+}
+.ques-sets {
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 12px;
+  margin-top: 1.3rem;
+  margin-bottom: 3rem;
+}
+
+.card {
+  width: 170px;
+  height: 240px;
+  text-align: center;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 90px;
+  align-items: center;
+}
+
+
+.card-odd{
+  background: url('card_odd.png');
+  background-size: cover;
+}
+
+.card-even{
+  background: url('card_design.png');
+  background-size: cover;
+}
+
+.btn {
+  font-size: 20px;
+  width: 75px;
+  padding: 5px 12px;
+  border: none;
+  background-color: hsl(216, 98%, 75px);
+  border-radius: 15px;
+  cursor: pointer;
+}
+.btn:hover {  
+  font-size: 22px;
+  background-color: rgba(13, 110, 255, 0.584);
+}
+.cards {
+  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.question-container {
+  width: 85vw;
+  height: 85vh;
+  margin: auto;
+  margin-top: 5vh;
+  background-color: #FDF7F4;
+  padding: 20px;
+  border-radius: 23px;
+}
+
+.topBar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+#set-name{
+  background-color: #685752;
+  padding: 4px 12px;
+  border-radius: 12px;
+  color: #fff;
+}
+
+#timer {
+  background-color: #685752;
+  padding: 4px 12px;
+  border-radius: 12px;
+  color: #fff;
+}
+.dispNone {
+  display: none;
+}
+
+#questions{
+  margin-top: 15vh;
+  font-family: "Lato", serif;
+}
+
+#questions p{
+  font-size: 1.5rem;
+  margin: 32px 12px;
+}
