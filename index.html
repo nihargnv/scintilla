@@ -1,176 +1,96 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Scintilla</title>
-    <style>
-      .card {
-        width: 120px;
-        height: 120px;
-        text-align: center;
-        border: 3px solid black;
-      }
-      .btn {
-        font-size: 20px;
-      }
-      .btn:hover {
-        font-size: 25px;
-      }
-      .cards {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-        justify-content: center;
-      }
+  <!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <title>Scintilla</title>
+    </head>
+    <body>
+      <div id="first-sec">
+        <div class="logo">
+          <img src="logo.png" alt="">
+        </div>
+        <h2>Round -2</h2>
+        <h1 class="head">Welcome to Knowledge Flip Fiesta</h1>
+        <h4 class="rules" id="rulesClick">Rules <i class="fa-solid fa-caret-down"></i></h4>
+        <ul class="rulesList" id="RulesListID">
+          <li>This round is based on Aptitude. In this, participants are requested to select a set from Question sets. These sets consist of different topics in Aptitude (like Age, Time & Work, Percentage, Profit & Loss, Clocks, Time, Speed, Distance, Relations, etc.….). The questions will not be passed to other teams. </li>
+          <li>You will be displayed questions of your set chosen</li>
+          <li>You will have 2 mins to solve the questins.</li>
+          <li>You cannot come back after you have chose your set.</li>
+        </ul>
+        <div class="ques-sets">
+        <h2>Question Sets</h2>
+        <div class="cards">
+          <div class="card card-odd" id="s1">
+            <h1 class="det_name">Set - 1</h1>
+            <button class="btn" onclick="showQuestion(1)">Pick</button>
+          </div>
+          <div class="card card-even" id="s2">
+            <h1 class="det_name">Set - 2</h1>
+            <button class="btn" onclick="showQuestion(2)">Pick</button>
+          </div>
+          <div class="card card-odd"  id="s3">
+            <h1 class="det_name">Set - 3</h1>
+            <button class="btn" onclick="showQuestion(3)">Pick</button>
+          </div>
+          <div class="card card-even"  id="s4">
+            <h1 class="det_name">Set - 4</h1>
+            <button class="btn" onclick="showQuestion(4)">Pick</button>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card card-even"  id="s5">
+            <h1 class="det_name">Set - 5</h1>
+            <button class="btn" onclick="showQuestion(5)">Pick</button>
+          </div>
+          <div class="card card-odd" id="s6">
+            <h1 class="det_name">Set - 6</h1>
+            <button class="btn" onclick="showQuestion(6)">Pick</button>
+          </div>
+          <div class="card card-even" id="s7">
+            <h1 class="det_name">Set - 7</h1>
+            <button class="btn" onclick="showQuestion(7)">Pick</button>
+          </div>
+          <div class="card card-odd" id="s8">
+            <h1 class="det_name">Set - 8</h1>
+            <button class="btn" onclick="showQuestion(8)">Pick</button>
+          </div>
+        </div>
+        <div class="cards">
+          <div class="card card-odd" id="s9">
+            <h1 class="det_name">Set - 9</h1>
+            <button class="btn" onclick="showQuestion(9)">Pick</button>
+          </div>
 
-      .question-container {
-        display: none;
-        text-align: center;
-        margin-top: 30px;
-      }
-
-      #timer {
-        font-size: 20px;
-        font-weight: bold;
-      }
-      .dispNone {
-        display: none;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="first-sec">
-      <h1>Hello, Welcome to Scintilla!</h1>
-      <h2>Round-x, Aptitude</h2>
-      <h4>Rules</h4>
-      <ul class="rulesList">
-        <li>You have to choose any "one" set</li>
-        <li>You will be displayed questions of your set chosen</li>
-        <li>You will have X mins to solve the questins.</li>
-        <li>You cannot come back after you have chose your set.</li>
-      </ul>
-      <h2 style="text-align: center">Question Sets</h2>
-      <div class="cards">
-        <div class="card">
-          <h1 class="det_name">Set - 1</h1>
-          <button class="btn" onclick="showQuestion(1)">Pick</button>
-        </div>
-        <div class="card">
-          <h1 class="det_name">Set - 2</h1>
-          <button class="btn" onclick="showQuestion(2)">Pick</button>
-        </div>
-        <div class="card">
-          <h1 class="det_name">Set - 3</h1>
-          <button class="btn" onclick="showQuestion(3)">Pick</button>
-        </div>
-        <div class="card">
-          <h1 class="det_name">Set - 4</h1>
-          <button class="btn" onclick="showQuestion(4)">Pick</button>
-        </div>
-        <div class="card">
-          <h1 class="det_name">Set - 5</h1>
-          <button class="btn" onclick="showQuestion(5)">Pick</button>
-        </div>
-        <div class="card">
-          <h1 class="det_name">Set - 6</h1>
-          <button class="btn" onclick="showQuestion(6)">Pick</button>
-        </div>
-        <div class="card">
-          <h1 class="det_name">Set - 7</h1>
-          <button class="btn" onclick="showQuestion(7)">Pick</button>
-        </div>
-        <div class="card">
-          <h1 class="det_name">Set - 8</h1>
-          <button class="btn" onclick="showQuestion(8)">Pick</button>
-        </div>
-        <div class="card">
-          <h1 class="det_name">Set - 9</h1>
-          <button class="btn" onclick="showQuestion(9)">Pick</button>
-        </div>
-
-        <div class="card">
-          <h1 class="det_name">Set - 10</h1>
-          <button class="btn" onclick="showQuestion(10)">Pick</button>
+          <div class="card card-even" id="s10">
+            <h1 class="det_name">Set - 10</h1>
+            <button class="btn" onclick="showQuestion(10)">Pick</button>
+          </div>
+          <div class="card card-odd" id="s11">
+            <h1 class="det_name">Set - 11</h1>
+            <button class="btn" onclick="showQuestion(11)">Pick</button>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="question-container" id="questionContainer">
-      <h3 id="question">Question will appear here.</h3>
-      <p id="timer"></p>
-    </div>
+      <div class="question-container dispNone" id="questionContainer">
+        <div class="topBar">
+          <h2 id="set-name">Set-1</h2>
+          <h2 id="timer">00:00</h2>
+        </div>
+        <div id="questions">
+          <p id="q1">1. If MANGO is coded as 51295 and APPLE is coded as 52267, how is PEACH coded?</p>
+          <p id="q2">2. A train 120 meters long is running at a speed of 54 km/h. How much time will it take to pass a pole?</p>
+        </div>
+        
+      </div>
 
-
-
-    <script>
-      // Prevent page reloading using F5, Ctrl+R, or browser refresh
-      window.addEventListener("beforeunload", function (e) {
-        // Cancel the event
-        e.preventDefault();
-        // Display a confirmation message (most browsers show their own message)
-        e.returnValue =
-          "Are you sure you want to leave? Reloading is prohibited during the quiz!";
-          
-        return false;
-      });
-
-      // Prevent specific key combinations for reloading
-      window.addEventListener("keydown", function (e) {
-        if (
-          e.key === "F5" ||
-          (e.ctrlKey && e.key === "r") ||
-          (e.metaKey && e.key === "r")
-        ) {
-          e.preventDefault();
-          alert("Reloading is prohibited during the quiz!");
-        }
-      });
-
-      // Disable right-click
-      document.addEventListener("contextmenu", function (e) {
-        e.preventDefault();
-        alert("Right-click is disabled on this page.");
-      });
-    </script>
-
-    <script>
-      let timerInterval;
-      const firstSec = document.getElementById("first-sec");
-      function showQuestion(cardNumber) {
-        // Display the question and start the timer
-        firstSec.classList.add("dispNone");
-        document.getElementById("questionContainer").style.display = "block";
-        document.getElementById(
-          "question"
-        ).innerText = `This is the question for Card ${cardNumber}`;
-        startTimer(20); // 1 minute in seconds
-      }
-
-      function startTimer(duration) {
-        let timer = duration;
-        const timerElement = document.getElementById("timer");
-
-        clearInterval(timerInterval); // Clear any existing timer
-        timerInterval = setInterval(() => {
-          const minutes = Math.floor(timer / 60);
-          const seconds = timer % 60;
-
-          timerElement.innerText = `Time Remaining: ${minutes}:${
-            seconds < 10 ? "0" + seconds : seconds
-          }`;
-
-          if (--timer < 0) {
-            clearInterval(timerInterval);
-            endQuiz();
-          }
-        }, 1000);
-      }
-
-      function endQuiz() {
-        document.getElementById("questionContainer").style.display = "none";
-        alert("Time is up!");
-      }
-    </script>
-  </body>
-</html>
+      <script src="ques.js"></script>
+      <script src="script.js"></script>
+      
+    </body>
+  </html>
